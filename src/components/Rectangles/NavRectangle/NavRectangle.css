@@ -1,0 +1,21 @@
+.Rectangle {
+    margin-bottom: 0.1em;
+    padding: auto;
+    max-width: 12em;
+    min-width: 12em;
+    height: 3em;
+    background-color: white;
+    box-shadow: 5px 5px 10px grey;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: x-large;
+    font-weight: bold;
+    color: #666666;
+}
+
+.Rectangle:hover {
+    cursor: pointer;
+    position: relative;
+}

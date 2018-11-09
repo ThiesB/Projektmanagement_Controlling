@@ -1,0 +1,24 @@
+.Searchbar {
+    font-size: large;
+    margin-right: 5em;
+    border-width: 0 0 0 0;
+}
+
+.Searchbar:focus {
+    outline-color: transparent;
+}
+
+.UnderlineSearchbar {
+    display: inline-block;
+    border-style: solid;
+    border-color: grey;
+    border-width: 0 0 1px 0;
+    padding-bottom: 0.5em;
+}
+
+.Icon:hover {
+    cursor: pointer;
+}
+
+
+

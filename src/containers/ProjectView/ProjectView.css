@@ -1,0 +1,56 @@
+.Content {
+    margin: auto;
+    padding: 1rem;
+    max-width: 100%;
+    min-width: 17em;
+    background-color: white;
+    box-shadow: 5px 5px 10px grey;
+    text-align: left;
+    color: #666666;
+}
+
+.Grid {
+    display: grid;
+    height: 20em;
+    grid-gap: 10px 10px;
+    grid-template-columns: repeat(auto-fit, minmax(20em, 25em));
+    grid-template-rows: auto;
+    justify-content: center;
+    justify-items: center;
+}
+
+.Scrollable {
+    width: 90%;
+    margin: 0 auto;
+    padding: 1em;
+    height: 20em;
+    overflow-y: scroll;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+.BorderScroll {
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    margin-left: 3em;
+    margin-right: 3em;
+    padding-bottom: 1em;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #E7E9EC;
+}
+
+.ContentRight {
+    text-align: right;
+}
+
+.Table {
+    width: 90%;
+    margin-left: 7em;
+}

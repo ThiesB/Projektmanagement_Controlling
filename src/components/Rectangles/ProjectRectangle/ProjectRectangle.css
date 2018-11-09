@@ -1,0 +1,31 @@
+.Rectangle {
+    max-width: 25em;
+    min-width: 25em;
+    padding: auto;
+    height: 13em;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    font-size: large;
+    font-weight: bold;
+    color: white;
+
+    box-shadow: 5px 0 5px 0 grey;
+}
+
+.Rectangle:hover {
+    cursor: pointer;
+    box-shadow: 5px 0 5px 1px grey;
+}
+
+.Table{
+    width: 100%;
+}
+
+.red {
+    background-color: #DA004D;
+}
+
+.green {
+    background-color: #00AD97;
+}
