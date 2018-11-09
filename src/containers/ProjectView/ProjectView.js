@@ -101,6 +101,7 @@ class projectView extends Component {
 
     return (
       <ReactAux>
+        <h1 className={classes.HeaderRight}>Projektansicht</h1>
         <NavRectangle
           title="PROJEKTE"
         />
