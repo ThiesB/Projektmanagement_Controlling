@@ -13,7 +13,7 @@
     display: grid;
     height: 20em;
     grid-gap: 10px 10px;
-    grid-template-columns: repeat(auto-fit, minmax(20em, 25em));
+    grid-template-columns: repeat(auto-fit, minmax(20em, 22em));
     grid-template-rows: auto;
     justify-content: center;
     justify-items: center;
@@ -51,7 +51,7 @@
 }
 
 .Table {
-    width: 90%;
+    width: 80%;
     margin-left: 7em;
 }
 
@@ -59,4 +59,8 @@
     text-align: right;
     font-size: 3em;
     color: #666666;
+}
+
+.Link {
+    text-decoration: none;
 }

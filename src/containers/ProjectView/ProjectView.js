@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 
+import { Link } from 'react-router-dom'
+
 import classes from './ProjectView.css'
 
 import ReactAux from '../../hoc/ReactAux'
@@ -10,87 +12,49 @@ import PlusButton from '../../components/UI/Button/Button'
 import Searchbar from '../../components/UI/Searchbar/Searchbar'
 
 class projectView extends Component {
+  constructor (props) {
+    super(props);
 
-  state = {
-    projects: [
-      {
-        title: 'Projekt 1',
-        balance: -2000,
-        completed: true,
-        startDate: '2018.02.03',
-        endDate: '2018.05.23'
-      },
-      {
-        title: 'Projekt 2',
-        balance: 2000,
-        completed: true,
-        startDate: '2018.02.03',
-        endDate: '2018.05.23'
-      },
-      {
-        title: 'Projekt 3',
-        balance: 4000,
-        completed: true,
-        startDate: '2018.02.03',
-        endDate: '2018.05.23'
-      },
-      {
-        title: 'Projekt 4',
-        balance: -4000,
-        completed: false,
-        startDate: '2018.02.03',
-        endDate: '2018.05.23'
-      },
-      {
-        title: 'Projekt 5',
-        balance: 4000,
-        completed: true,
-        startDate: '2018.02.03',
-        endDate: '2018.05.23'
-      },
-      {
-        title: 'Projekt 6',
-        balance: 4000,
-        completed: true,
-        startDate: '2018.02.03',
-        endDate: '2018.05.23'
-      },
-      {
-        title: 'Projekt 7',
-        balance: 4000,
-        completed: false,
-        startDate: '2018.02.03',
-        endDate: '2018.05.23'
-      },
-      {
-        title: 'Projekt 8',
-        balance: -4000,
-        completed: false,
-        startDate: '2018.02.03',
-        endDate: '2018.05.23'
-      },
-      {
-        title: 'Projekt 9',
-        balance: 4000,
-        completed: false,
-        startDate: '2018.02.03',
-        endDate: '2018.05.23'
-      }
-    ]
+    this.state = {
+      projects: []
+    };
+
   }
 
+  componentDidMount() {
+    this.fetchProjectsFromServer()
+  }
+
+  fetchProjectsFromServer() {
+    fetch("http://localhost:3000/Projects")
+      .then(response => response.json())
+      .then(json => {
+        this.setState({ projects: json});
+      })
+  }
+
+
+
   loadProjects = (projects) => {
-    return projects.map((project, i) => {
+    return projects.map(project => {
       const bgColor = project.balance >= 0 ? 'green' : 'red'
+      const titleNoSpace= project.title.replace(' ', '_')
+
       return (
-        <ProjectRectangle
-          key={i}
-          title={project.title}
-          styles={bgColor}
-          balance={project.balance}
-          startDate={project.startDate}
-          endDate={project.endDate}
-        />
+        <Link
+          key={project.id}
+          to={{pathname: `/detail/${project.id}`}}
+          className={classes.Link}
+        >
+          <ProjectRectangle
+            key={project.id}
+            title={project.title}
+            styles={bgColor}
+            balance={project.balance}
+            startDate={project.startDate}
+            endDate={project.endDate}
+          />
+        </Link>
       )
     })
   }
@@ -102,9 +66,14 @@ class projectView extends Component {
     return (
       <ReactAux>
         <h1 className={classes.HeaderRight}>Projektansicht</h1>
-        <NavRectangle
-          title="PROJEKTE"
-        />
+        <Link
+          to={{pathname: `/`}}
+          className={classes.Link}
+        >
+          <NavRectangle
+            title="PROJEKTE"
+          />
+        </Link>
         <HeaderRectangle
           title="Manage deine Projekte"
         />

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 import Layout from './components/Layout/Layout'
-import ProjectView from './containers/ProjectView/ProjectView'
+import Router from './Router/router'
 
 import classes from './App.css'
 
@@ -10,7 +10,7 @@ class App extends Component {
     return (
       <div className={classes.App}>
         <Layout>
-          <ProjectView/>
+          <Router/>
         </Layout>
       </div>
 

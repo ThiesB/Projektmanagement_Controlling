@@ -1,8 +1,8 @@
 .Rectangle {
-    max-width: 25em;
-    min-width: 25em;
+    max-width: 23em;
+    min-width: 23em;
     padding: auto;
-    height: 13em;
+    height: 14em;
     display: block;
     align-items: center;
     justify-content: center;

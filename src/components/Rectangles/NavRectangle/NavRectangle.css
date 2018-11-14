@@ -1,13 +1,12 @@
 .Rectangle {
     margin-bottom: 0.1em;
+    margin-right: 0.1em;
     padding: auto;
     max-width: 12em;
     min-width: 12em;
     height: 3em;
     background-color: white;
-    box-shadow: 5px 5px 10px grey;
-
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     font-size: x-large;
@@ -17,5 +16,6 @@
 
 .Rectangle:hover {
     cursor: pointer;
+    box-shadow: 5px 5px 10px grey;
     position: relative;
 }
